@@ -15,96 +15,19 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.slideContainer}>
           <Carousel showThumbs={false}>
-            <div>
-              <Image
-                alt=""
-                src="http://lorempixel.com/output/cats-q-c-640-480-1.jpg"
-                width={640}
-                height={480}
-              />
-              <p className="legend">Cat 1</p>
-            </div>
-            <div>
-              <Image
-                alt=""
-                src="http://lorempixel.com/output/cats-q-c-640-480-2.jpg"
-                width={640}
-                height={480}
-              />
-              <p className="legend">Cat 2</p>
-            </div>
-            <div>
-              <Image
-                alt=""
-                src="http://lorempixel.com/output/cats-q-c-640-480-3.jpg"
-                width={640}
-                height={480}
-              />
-              <p className="legend">Cat 3</p>
-            </div>
-            <div>
-              <Image
-                alt=""
-                src="http://lorempixel.com/output/cats-q-c-640-480-4.jpg"
-                width={640}
-                height={480}
-              />
-              <p className="legend">Cat 4</p>
-            </div>
-            <div>
-              <Image
-                alt=""
-                src="http://lorempixel.com/output/cats-q-c-640-480-5.jpg"
-                width={640}
-                height={480}
-              />
-              <p className="legend">Cat 5</p>
-            </div>
-            <div>
-              <Image
-                alt=""
-                src="http://lorempixel.com/output/cats-q-c-640-480-6.jpg"
-                width={640}
-                height={480}
-              />
-              <p className="legend">Cat 6</p>
-            </div>
-            <div>
-              <Image
-                alt=""
-                src="http://lorempixel.com/output/cats-q-c-640-480-7.jpg"
-                width={640}
-                height={480}
-              />
-              <p className="legend">Cat 7</p>
-            </div>
-            <div>
-              <Image
-                alt=""
-                src="http://lorempixel.com/output/cats-q-c-640-480-8.jpg"
-                width={640}
-                height={480}
-              />
-              <p className="legend">Cat 8</p>
-            </div>
-            <div>
-              <Image
-                alt=""
-                src="http://lorempixel.com/output/cats-q-c-640-480-9.jpg"
-                width={640}
-                height={480}
-              />
-              <p className="legend">Cat 9</p>
-            </div>
-            <div>
-              <Image
-                alt=""
-                src="http://lorempixel.com/output/cats-q-c-640-480-10.jpg"
-                width={640}
-                height={480}
-              />
-              <p className="legend">Cat 10</p>
-            </div>
+            {Array.from({ length: 10 }).map((_, index) => (
+              <div key={index}>
+                <Image
+                  alt=""
+                  src={`http://lorempixel.com/output/cats-q-c-640-480-${
+                    index + 1
+                  }.jpg`}
+                  width={640}
+                  height={480}
+                />
+                <p className="legend">Cat {index + 1}</p>
+              </div>
+            ))}
           </Carousel>
         </div>
       </main>
