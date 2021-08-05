@@ -3,6 +3,19 @@ import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
 import styles from "../styles/Home.module.css";
 
+const images = [
+  "92c952",
+  "771796",
+  "24f355",
+  "d32776",
+  "f66b97",
+  "56a8c2",
+  "b0f7cc",
+  "54176f",
+  "51aa97",
+  "810b14",
+];
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -15,17 +28,15 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.slideContainer}>
           <Carousel showThumbs={false}>
-            {Array.from({ length: 10 }).map((_, index) => (
-              <div key={index}>
+            {images.map((url, index) => (
+              <div key={url}>
                 <Image
                   alt=""
-                  src={`http://lorempixel.com/output/cats-q-c-640-480-${
-                    index + 1
-                  }.jpg`}
+                  src={`https://via.placeholder.com/600/${url}`}
                   width={640}
-                  height={480}
+                  height={600}
                 />
-                <p className="legend">Cat {index + 1}</p>
+                <p className="legend">Image {index + 1}</p>
               </div>
             ))}
           </Carousel>
